@@ -21,3 +21,9 @@ sieve :: [Int] -> [Int]
 sieve [] = []
 sieve (x:xs) = x:sieve [k|k <- xs, k `mod` x /= 0]
 
+-- And of course, the lazy version in the above book:
+primes''' :: [Int]
+primes''' = sieve_lazy [2..]
+
+sieve_lazy :: [Int] -> [Int]
+sieve_lazy (x:xs) = x:sieve_lazy [k|k <- xs, k `mod` x /= 0]
