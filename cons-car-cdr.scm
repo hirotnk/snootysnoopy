@@ -1,5 +1,9 @@
 ;; From SICP 2.1.4, Exercise 2.4
 ;; Implementation of cons, car, and cdr. Neat.
+;;
+;; Looking at them now, `car' is application of `first', and `cdr' is
+;; application of `second' in terms of lambda calculus. `cons' is sort of
+;; construction of `apply' here.
 (define (cons x y) (lambda (m) (m x y)))
 (define (car z) (z (lambda (x y) x)))
 (define (cdr z) (z (lambda (x y) y)))
