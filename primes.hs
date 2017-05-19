@@ -4,6 +4,12 @@ factor n = [x | x <- [1..n], n `mod` x == 0]
 is_prime :: Int -> Bool
 is_prime x = factor x == [1,x]
 
+prime_factors :: Integer -> [Integer]
+prime_factors 1 = []
+prime_factors n = p : prime_factors (n `div` p)
+                  where p = head [k | k <- [2..r] ++ [n], n `mod` k == 0]
+                        r = floor $ sqrt $ fromInteger n
+
 -- from Programming in Haskell 2nd edition, Ch5.2
 primes :: Int -> [Int]
 primes n = [x | x <- [1..n], is_prime(x)]
