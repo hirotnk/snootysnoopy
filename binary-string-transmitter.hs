@@ -1,4 +1,4 @@
--- from 'Programming in Haskell' 2nd edition, 7.6
+-- From 7.6 , 'Programming in Haskell' 2nd edition, by Graham Hutton
 import Data.Char
 
 main = print (transmit "higher-order functions are easy")

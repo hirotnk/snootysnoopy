@@ -1,3 +1,4 @@
+-- From 10.8, Programming in Haskell 2nd edition, by Graham Hutton
 -- To run, type "life glider", then enter in ghci
 import Control.Concurrent
 
